@@ -20,6 +20,21 @@ header {
     border-bottom: 1px solid black;
    
 }
+/* Container holding the image and the text */
+.container{
+    position: relative;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
 
 article {
@@ -44,6 +59,7 @@ button#myBtn {
   display: inline-block;
   font-size: 16px;
 }
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -63,8 +79,19 @@ button#myBtn {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%; /*Could be more or less, depending on screen size */
   }
+/* Modal submit button*/
+  button#modalBtn {
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
   
   /* The Close Button */
   .close {

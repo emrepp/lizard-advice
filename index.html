@@ -11,21 +11,40 @@
 <body>
     <main>
         <header>
-        <h1>Ask this Lizard for Advice</h1>
+        <h1>Ask this Lizard for Life Advice</h1>
         </header>
-        <img src="https://live.staticflickr.com/2940/14431710441_385928e588_k.jpg" width="1000" height="666.5" alt="Is it a Lizard? (Explored)">
+        <div class="container">
+            <img src="https://live.staticflickr.com/2940/14431710441_385928e588_k.jpg" alt="Norway" style="width:100%;">
+            <div class="text-block">
+              <h4>Nature</h4>
+              <p>What a beautiful sunrise</p>
+            </div>
+          </div>
+       
         <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/61063858@N02/14431710441">Is it a Lizard? (Explored)</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/61063858@N02">mdalmuld</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by/2.0/?ref=openverse">CC BY 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" 
-        style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>. </p>
+        style="height: 1em; margin-right: 0.125em; display: inline;"></img></a> </p>
+       
+       
         <article>
             <h2 id="advice"></h2>
         </article>
         <footer>
             <button id="myBtn">Ask Me Anything </button>
             
+
             <div id="myModal" class="modal">
             <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            
+            <label for="freeform">Ask the Lizard anything:</label>
+<br>
+<textarea id="freeform" name="freeform" rows="4" cols="50">
+Enter text here...
+</textarea>
+<br>
+
+            <button id="modalBtn">Give me Advice</button>
+
   </div>
 
 </div>

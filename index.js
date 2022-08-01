@@ -12,19 +12,11 @@ const colours = ["#FFCDD2", "#FCE4EC", "#F3E5F5", "#8C9EFF", "#90CAF9", "#80D8FF
 const adviceRead = document.querySelector("h2#advice")
 const bground = document.querySelector("body")
 
-function getQuotes() {
-    API.get(API_URL).then(data => addQuote(data['slip']['advice']))
+function getAdvice() {
+    API.get(API_URL).then(data => addAdvice(data['slip']['advice']))
 }
 
-// FUNCTIONS
 
-function addQuote(quote) {
-    quoteP.innerText = quote;
-    let fontsNum = Math.floor(Math.random()*fontType.length);
-    let coloursNum = Math.floor(Math.random()*colours.length);
-    adviceRead.style.fontFamily=fontType[fontsNum];
-    bground.style.backgroundColor = colours[coloursNum]
-}
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
@@ -49,9 +41,15 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+//input field on modal
+
+//id
+
+
+
 
 const reloadButton = document.querySelector("button#reload")
-reloadButton.addEventListener("click", ()=> getQuotes())
+reloadButton.addEventListener("click", ()=> getAdvice())
 
 // START PAGE
 document.body.onload = getQuotes
