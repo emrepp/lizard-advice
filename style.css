@@ -17,36 +17,37 @@ main {
 header {
     justify-content: center;
     width: 100%;
-    border-bottom: 1px solid black;
+    
    
 }
 /* Container holding the image and the text */
 .container{
     position: relative;
   }
+
+  img{
+    height:  50%;
+    width: 50%;
+  }
   
-  /* Bottom right text */
+  /* Bottom text */
   .text-block {
-    position: absolute;
     bottom: 20px;
     right: 20px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     color: white;
     padding-left: 20px;
     padding-right: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 30px;
   }
 
 
-article {
-    font-size: 3em;
-    height: 75%;
-    line-height: 1;
-    width: 100%;
-    
-}
+
 
 footer {
-    width: 100%
+    width: 100%;
 }
 
 button#myBtn {
@@ -58,6 +59,7 @@ button#myBtn {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .modal {
@@ -106,6 +108,18 @@ button#myBtn {
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  select {
+    margin-bottom: 10px;
+    margin-top: 10px;
+   
+    outline: 0;
+    background: #2ecc71;
+    color: #fff;
+    border: 1px solid crimson;
+    padding: 4px;
+    border-radius: 9px;
   }
 
 
