@@ -1,6 +1,28 @@
 // API
 
- 
+const apiURL = "https://api.adviceslip.com/advice";
+
+function get(url) {return fetch(url).then(resp => resp.json())}
+const api= { get }
+
+
+const quoteP = document.querySelector("h2#quote")
+
+function getQuotes() {
+  api.get(apiURL).then(data => addQuote(data['slip']['advice']))
+}
+
+function addQuote(quote) {
+  quoteP.innerText = quote;}
+
+  const mySelect = document.getElementById('my-select')
+
+  mySelect.addEventListener('change', function() {
+    getQuotes()
+    return(this.value);
+ })
+ document.body.onload = getQuotes
+
 /*form.addEventListener('submit', function(e) {
     e.preventDefault()
     const payload = new FormData(form);
@@ -80,29 +102,91 @@ window.onclick = function(event) {
 
 
 
-//const reloadButton = document.querySelector("")
-//reloadButton.addEventListener("click", ()=> getAdvice())
+// document.getElementById('my-select').addEventListener('change', function() {
+ //  return(this.value);
 
+  //})
+/*const mySelect = document.getElementById('my-select')
 
-/*const selection = document.querySelector('selectOne');
-selectOne.addEventListener('change',() =>
-)
-const result = document.querySelector('h2#quote');
-
-selection.addEventListener('change', () =>
-{
-  result.innerText = selection.options[selection.selectedIndex].value;})*/
+mySelect.addEventListener('change', function() {
+    console.log(this.value);
+ })
  
-  //const sel = document.getElementById("selectOne");
-  //const value = sel.options[sel.selectedIndex].value;
 
- const sendValue = document.getElementById('my-select').addEventListener('change', function() {
-   return(this.value);
-  })
+async function run() {
+    for (let i = 1; i <= 100; i++) {
+      
+     
+     
 
+        let data = await fetch(`https://api.adviceslip.com/advice`,{
+              method:'GET',
+               })
+               .then(res=>res.json());
+
+        push(data);
+    }
+
+    JSON.stringify(data)
+   
+};
+
+
+/*
+  async function getQuote(){
+    const response = await fetch(`/${sendValue}`);
+    const blob = await response.blob();
+    document.getElementById('flower').src=URL.createObjectURL(blob);
+    }
+
+
+  //FIIXXXXXXXXX
+  const API_URL = "e";
+function get(url) {return fetch(url).then(resp => resp.json())}
+
+
+
+    const object = get.find(obj => obj.id === sendValue);
+ 
+
+
+/*const API = {get}
+
+//function getQuotes() {
+ // API.get(API_URL).then(data => addQuote(data['slip']['advice']))
+//}
+
+c
+
+//function addQuote(quote) {
+  quoteP.innerText = quote;
+}
+
+const reloadButton = document.querySelector("button#modalBtn")
+reloadButton.addEventListener("click", ()=> getQuotes())
+
+document.body.onload = getQuotes
+
+ /* function JavaScriptFetch() {
+    const script = document.createElement('script');
+    script.src = `https://api.adviceslip.com/advice/${sendValue}`;
+    document.querySelector('head').appendChild(script);
+}
   
+function processJSONPResponse(data) {
+    alert(data);
+} */
   
+/*const script = document.createElement('script');
+script.src = 'https://api.adviceslip.com/advice';
+document.body.appendChild(script);*/
 
+/*function handleJSON() {
+fetch('https://api.adviceslip.com/advice')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+}
+console.log(handleJSON())
   
  /* function submitForm(e) {
    // e.preventDefault();
