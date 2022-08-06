@@ -1,6 +1,6 @@
 // API
 
-const apiURL = "https://api.adviceslip.com/advice";
+/*const apiURL = "https://api.adviceslip.com/advice";
 
 function get(url) {return fetch(url).then(resp => resp.json())}
 const api= { get }
@@ -9,7 +9,8 @@ const api= { get }
 const quoteP = document.querySelector("h2#quote")
 
 function getQuotes() {
-  api.get(apiURL).then(data => addQuote(data['slip']['advice']))
+  api.get(apiURL)
+  .then(data => addQuote(data['slip']['advice']))
 }
 
 function addQuote(quote) {
@@ -17,11 +18,41 @@ function addQuote(quote) {
 
   const mySelect = document.getElementById('my-select')
 
+
   mySelect.addEventListener('change', function() {
-    getQuotes()
-    return(this.value);
+    getQuotes(this.value)
+    
  })
- document.body.onload = getQuotes
+
+
+
+ document.body.onload = getQuotes */
+
+
+/////
+const init = () => {
+  const dropDownSelect = document.querySelector('form');
+  document.addEventListener('change', (event) => {
+    event.preventDefault();
+    const input = document.getElementById('my-select');
+
+    fetch(`https://api.adviceslip.com/advice/${input.value}`)
+    .then(response => response.json())
+    .then(data =>{
+      console.log(data)
+      const adviceQuote = document.querySelector('h2#quote');
+      adviceQuote.innerText = data.adviceQuote
+
+    })
+  })
+}
+document.addEventListener('DOMContentLoaded', init);
+
+
+
+
+
+
 
 /*form.addEventListener('submit', function(e) {
     e.preventDefault()
