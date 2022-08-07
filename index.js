@@ -1,42 +1,40 @@
 // API
 
-/*const apiURL = "https://api.adviceslip.com/advice";
+const apiURL = "https://api.adviceslip.com/advice";
 
 function get(url) {return fetch(url).then(resp => resp.json())}
 const api= { get }
 
 
-const quoteP = document.querySelector("h2#quote")
+const advicePost = document.querySelector("h2#quote")
 
-function getQuotes() {
+function getAdvice() {
   api.get(apiURL)
-  .then(data => addQuote(data['slip']['advice']))
+  .then(data => addAdvice(data['slip']['advice']))
 }
 
-function addQuote(quote) {
-  quoteP.innerText = quote;}
+function addAdvice(quote) {
+  advicePost.innerText = quote;}
 
   const mySelect = document.getElementById('my-select')
 
 
   mySelect.addEventListener('change', function() {
-    getQuotes(this.value)
+    getAdvice()
     
  })
 
-
-
- document.body.onload = getQuotes */
+ document.body.onload = getAdvice
 
 
 /////
-const init = () => {
+/*const init = () => {
   const dropDownSelect = document.querySelector('form');
   document.addEventListener('change', (event) => {
     event.preventDefault();
     const input = document.getElementById('my-select');
 
-    fetch(`https://api.adviceslip.com/advice/${input.value}`)
+    fetch(`https://api.adviceslip.com/advice/${dropDownSelect.value}`)
     .then(response => response.json())
     .then(data =>{
       console.log(data)
@@ -46,7 +44,7 @@ const init = () => {
     })
   })
 }
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', init); */
 
 
 
