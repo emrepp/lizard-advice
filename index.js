@@ -6,11 +6,13 @@ function get(url) {return fetch(url).then(resp => resp.json())}
 const api= { get }
 
 
-const advicePost = document.querySelector("h2#quote")
+const advicePost = document.querySelector("h2#quote");
+
 
 function getAdvice() {
   api.get(apiURL)
   .then(data => addAdvice(data['slip']['advice']))
+  advicePost.style.display= "none"
 }
 
 function addAdvice(quote) {
@@ -72,7 +74,9 @@ document
 function toggleCrown() {
     document.querySelector('.parent')
     .querySelector('.layer2').style.display = "block";
-    modal.style.display = "none"
+    modal.style.display = "none";
+    advicePost.style.display = "block"
+
 };
 
 
