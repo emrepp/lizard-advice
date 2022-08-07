@@ -25,21 +25,30 @@ header {
     position: relative;
   }
 
+  .parent {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
   
+  .layer1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 1px solid #000000;
+    width:50%;
+  }
+  
+  .layer2 {
+    position: absolute;
+    top: 0px;
+    left: 355px;
+    border: 1px solid #000000;
+    width:50%;
 
-  img {
-position:absolute;
-top: 0px;
-left: 0px;
-}
-#layer1
-{
-   z-index: 10;
-}
-#layer2
-{
-z-index: 20;
-}
+  }
+
+ 
   
   /* Bottom text */
   .text-block {
