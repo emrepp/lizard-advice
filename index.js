@@ -1,9 +1,51 @@
-// API
 
-const apiURL = "https://api.adviceslip.com/advice";
+
+      fetch('https://api.kanye.rest/')
+      .then(resp => resp.json())
+      .then(data => {
+        alwaysRenderAllContent = true;
+   
+  
+       console.log(data)
+      
+      });
+      
+
+      Promise.all([
+        fetch('https://api.kanye.rest/'),
+        fetch('https://api.adviceslip.com/advice')
+      
+      ]).then(function (responses) {
+        // Get a JSON object from each of the responses
+        return Promise.all(responses.map(function (response) {
+          return response.json();
+        }));
+      }).then(function (data) {
+        // Log the data to the console
+        // You would do something with both sets of data here
+
+        
+       
+        console.log(data);
+       
+      }).catch(function (error) {
+        // if there's an error, log it
+        console.log(error);
+      });
+      
+    
+
+     
+  
+
+
+ 
+
+
+/*const apiURL = "https://api.adviceslip.com/advice";
 
 function get(url) {return fetch(url).then(resp => resp.json())}
-const api= { get }
+const api= {get}
 
 
 const advicePost = document.querySelector("h2#quote");
@@ -11,9 +53,12 @@ const advicePost = document.querySelector("h2#quote");
 
 function getAdvice() {
   api.get(apiURL)
+
   .then(data => addAdvice(data['slip']['advice']))
   advicePost.style.display= "none"
 }
+
+
 
 function addAdvice(quote) {
   advicePost.innerText = quote;}
@@ -31,7 +76,7 @@ function addAdvice(quote) {
 
  
 
- //document.body.onload = getAdvice
+ //document.body.onload = getAdvice */
 
 
 
