@@ -14,24 +14,72 @@
       Promise.all([
         fetch('https://api.kanye.rest/'),
         fetch('https://api.adviceslip.com/advice')
-      
-      ]).then(function (responses) {
+      ])
+      .then(function (responses) {
         // Get a JSON object from each of the responses
         return Promise.all(responses.map(function (response) {
           return response.json();
         }));
-      }).then(function (data) {
+
+       
+      })
+
+     
+
+      
+      .then(function(data) { 
+        
+        const mySelect = document.getElementById('my-select');
+        
+       //const finalQuote = quotesPost.findIndex(element => element == selected);
+      
+      
+       
+
+        const advicePost = document.querySelector("h2#quote");
+       
+         mySelect.addEventListener('change',function(){
+          const selected = mySelect.options[mySelect.selectedIndex].value;
+          console.log(selected)
+          
+
+          if (selected == 0) {
+            
+           const first = data.slice(0,1)
+            console.log(first)
+          }
+          else {
+           const second = data.slice(1,2)
+            console.log(second)
+            
+
+          }
+         
+         })
+         
+       
+console.log(selected)
+
+mySelect.addEventListener('change', function() {
+  getAdvice()})
+
+      })
+      function renderQuote(quotes){
+        console.log(quotes);
+      }
+      //const renderQuote = () => {
+       // return "Hello!"}
+      
+
         // Log the data to the console
         // You would do something with both sets of data here
-
+       
         
-       
-        console.log(data);
-       
-      }).catch(function (error) {
-        // if there's an error, log it
-        console.log(error);
-      });
+
+            
+            
+        
+      
       
     
 
