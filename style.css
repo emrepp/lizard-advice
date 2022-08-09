@@ -26,23 +26,24 @@ header {
   .parent {
     position: relative;
     top: 0;
-    left: 0;
+    align-items: center;
   }
   
   .layer1 {
-    position: relative;
+   position:relative;
     top: 0;
     left: 0;
     border: 5px solid #f172a1;
     width:50%;
   }
-  
+   
   .layer2 {
     position: absolute;
-    top: 0px;
-    left: 355px;
+    top: 0;
     
-    width:50%;
+    
+    
+    width:30%;
     
 
   }
