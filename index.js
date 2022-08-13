@@ -1,30 +1,37 @@
 
-
       fetch('https://api.kanye.rest/')
       .then(resp => resp.json())
       .then(data => {
-        alwaysRenderAllContent = true;
+        //alwaysRenderAllContent = true;
    
   
        console.log(data)
       
       });
       
+      async function getPosts() {
 
+     // const init = () => {
 
-      const init = () => {
 
       Promise.all([
+       
         fetch('https://api.kanye.rest/'),
         fetch('https://api.adviceslip.com/advice')
+       
+        
+    
       ])
+
       .then (function (responses) {
        
         return Promise.all(responses.map(function (response) {
         return response.json();
         }))
-      })
-
+        
+      }) 
+     
+    
       
 
       
@@ -85,9 +92,12 @@
         })})
          
          }
+
+         const timer = setInterval(getPosts,3000)
+         getPosts();
          
        
-document.addEventListener('DOMContentLoaded', init);
+//document.addEventListener('DOMContentLoaded', init);
 
 
 
@@ -137,7 +147,6 @@ function toggleCrown() {
   
 
 };
-
 
   
 
