@@ -30,12 +30,15 @@
       
       .then(function(data){ 
         //JSON.stringify(data);
+
+        
         const mySelect = document.getElementById('my-select');
         
        
           mySelect.addEventListener('change',(event) =>{
-          event.preventDefault();
+          //event.preventDefault();
           const selected = mySelect.options[mySelect.selectedIndex].value;
+          console.log(selected)
           
           
          
@@ -43,31 +46,45 @@
 
           if (selected == 0) {
             const first = data.slice(0,1);
-            //first => addAdviceO(first['quote'])
-            console.log(first);
+            console.log(first)
+           
+          console.log( Object.values(first[0]))
+
+          
+       
+          
+            const quoteSpot = document.querySelector("h2#quote")
+            quoteSpot.textContent = Object.values(first[0])
+
             
-            for(let key in first) {
-              console.log(first[key])
-              document.getElementById("quote").innerHTML = JSON.stringify(first[key]);
-              
-            }
+           
            
           }
         
           else {
            const second = data.slice(1,2)
-           //second => addAdvice(second['slip']['advice'])
+           //second => addAdvice(second[0]['slip']['advice'])
            console.log(second) 
+           console.log(Object.values(second[0].slip["advice"]))
+           const secondAdvice = Object.values(second[0].slip["advice"])
+
+           console.log(secondAdvice.join(''))
+
+          
+           const adviceThings = document.querySelector("h2#quote")
+
+           adviceThings.textContent = secondAdvice.join('')
+
+         
+    
+
            
-           for(let advice in second) {
-            console.log(second[advice]);
-            document.getElementById("quote").innerHTML = JSON.stringify(second[advice]);
 
           }
       
-        }})
+        })})
          
-         })}
+         }
          
        
 document.addEventListener('DOMContentLoaded', init);
@@ -114,8 +131,8 @@ document
   .querySelector('.layer2').style.display = "none";
 
 function toggleCrown() {
-   // document.querySelector('.parent')
-   // .querySelector('.layer2').style.display = "block";
+   document.querySelector('.parent')
+  .querySelector('.layer2').style.display = "block";
     modal.style.display = "none";
   
 
