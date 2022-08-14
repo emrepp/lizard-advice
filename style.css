@@ -23,9 +23,9 @@ header {
 
 
 
-  .parent {
+  div.parent {
     position: relative;
-    top: 0;
+    
     align-items: center;
   }
   
@@ -39,14 +39,28 @@ header {
    
   .layer2 {
     position: absolute;
-    top: 0;
+    top:3px;
+    left:340px;
     
 
     
-    width:30%;
+    width:50%;
     
 
   }
+
+  .layer3 {
+    position: absolute;
+    top:7px;
+    left:340px;
+    
+
+    
+    width:40%;
+    
+
+  }
+
 
  
   

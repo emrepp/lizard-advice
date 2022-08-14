@@ -2,7 +2,7 @@
       fetch('https://api.kanye.rest/')
       .then(resp => resp.json())
       .then(data => {
-        //alwaysRenderAllContent = true;
+        
    
   
        console.log(data)
@@ -115,8 +115,9 @@ const span = document.getElementsByClassName("close")[0];
 btn.onclick = function() {
   
   modal.style.display = "block";
-  document.querySelector('.parent')
-  .querySelector('.layer2').style.display = "none";
+ 
+  document.querySelector('.layer2').style.display = "none";
+  
     
 
 }
@@ -136,18 +137,19 @@ window.onclick = function(event) {
 
 
 
-document
-  .querySelector('.parent')
-  .querySelector('.layer2').style.display = "none";
+
+
+
+  
+
+
+
+  document.querySelector('.layer2').style.display = "none";
 
 function toggleCrown() {
-   document.querySelector('.parent')
-  .querySelector('.layer2').style.display = "block";
-    modal.style.display = "none";
-  
-
-};
-
-  
+    document.querySelector('.layer2').style.display = "block";
+    modal.style.display = "none"; 
+    
+  }
 
  
