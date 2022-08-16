@@ -139,7 +139,6 @@ window.onclick = function(event) {
 
 
 
-
   
 
 
@@ -147,6 +146,7 @@ window.onclick = function(event) {
   //document.querySelector('.layer2').style.display = "none";
 
 function toggleCrown() {
+  document.getElementById("baseLizard").style.visibility = "visible";
     if (document.getElementById("baseLizard").src == "https://live.staticflickr.com/2940/14431710441_385928e588_k.jpg"){
         document.getElementById("baseLizard").src = "https://user-images.githubusercontent.com/58008006/184746854-52163985-60a2-4ecb-a207-e1da9f9162aa.png";
     } else {
