@@ -1,4 +1,5 @@
 
+   
       fetch('https://api.kanye.rest/')
       .then(resp => resp.json())
       .then(data => {
@@ -116,7 +117,7 @@ btn.onclick = function() {
   
   modal.style.display = "block";
  
-  document.querySelector('.layer2').style.display = "none";
+  //document.querySelector('.layer2').style.display = "none";
   
     
 
