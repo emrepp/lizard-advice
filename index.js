@@ -21,7 +21,7 @@
         const mySelect = document.getElementById('my-select');
         
        
-          mySelect.addEventListener('change',(event) =>{
+          mySelect.addEventListener('change',() =>{
           const selected = mySelect.options[mySelect.selectedIndex].value;
           
   
@@ -57,25 +57,39 @@ const btn = document.getElementById("myBtn");
 
 const span = document.getElementsByClassName("close")[0];
 
+btn.addEventListener('click', () => {
+modal.style.display = "block";}
+)
 
-btn.onclick = function() {
+
+//btn.onclick = function() {
   
-  modal.style.display = "block";
+ // modal.style.display = "block";
     
 
-}
+//}
 
-
-span.onclick = function() {
+span.addEventListener('click', () => {
   modal.style.display = "none";
 }
 
+)
 
-window.onclick = function(event) {
+//span.onclick = function() {
+//  modal.style.display = "none";
+//}
+
+window.addEventListener('click',() => {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+})
+
+//window.onclick = function(event) {
+ // if (event.target == modal) {
+  //  modal.style.display = "none";
+ // }
+//}
 
 
 function toggleCrown() {
